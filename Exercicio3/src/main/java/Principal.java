@@ -8,7 +8,6 @@ public class Principal {
         Livro livro = new Livro();
         CD cd = new CD();
 
-        System.out.println("--- Cadastro de Livro ---");
         System.out.print("Digite o título do livro: ");
         String nomeLivro = scanner.nextLine();
         livro.setNome(nomeLivro);

@@ -1,4 +1,3 @@
-
 public class CD extends Produto implements InfoGerais {
     private int numFaixas;
 
@@ -26,7 +25,4 @@ public class CD extends Produto implements InfoGerais {
         System.out.printf("Preço: R$ %.2f\n", getPreco());
         System.out.println("Número de Faixas: " + numFaixas);
     }
-}
-public class CD {
-
 }
