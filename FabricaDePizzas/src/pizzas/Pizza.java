@@ -9,7 +9,7 @@ import ingredientes.Veggies;
 
 public abstract class Pizza {
 
-    // Cada pizza mantém o seu conjunto de ingredientes
+    // de ingredientes para cada pizza
     String name;
     Dough dough;
     Sauce sauce;
@@ -18,7 +18,7 @@ public abstract class Pizza {
     Pepperoni pepperoni;
     Clam clam;
 
-    // Método abstrato: é aqui que os ingredientes serão recolhidos da fábrica
+    //os ingredientes seraorecolhidos da fabrica
     public abstract void prepare();
 
     public void bake() {
