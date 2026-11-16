@@ -20,7 +20,7 @@ public class Main {
         raiz.adicionar(docs);
         raiz.adicionar(new Arquivo("leia-me.txt", 2));
 
-        System.out.println("=== Simulador de Sistema de Arquivos (Padrão Composite) ===");
+        System.out.println("=== Simulador de Sistema de Arquivos (Padrao Composite) ===");
         ajuda();
 
         Scanner sc = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class Main {
                     case "mkdir" -> atual.adicionar(new Pasta(arg(p, 1), atual));
                     case "touch" -> atual.adicionar(new Arquivo(arg(p, 1), Long.parseLong(arg(p, 2))));
                     case "rm" -> {
-                        if (!atual.remover(arg(p, 1))) System.out.println("Não encontrado.");
+                        if (!atual.remover(arg(p, 1))) System.out.println("Nao encontrado.");
                     }
                     case "ls" -> atual.getFilhos().forEach(c ->
                             System.out.println((c instanceof Pasta ? "📁 " : "📄 ") + c.getNome()
@@ -43,7 +43,7 @@ public class Main {
                     case "tree" -> atual.exibir("");
                     case "size" -> {
                         ComponenteSistema alvo = p.length > 1 ? atual.buscar(p[1]) : atual;
-                        if (alvo == null) System.out.println("Não encontrado.");
+                        if (alvo == null) System.out.println("Nao encontrado.");
                         else System.out.println(alvo.getNome() + ": " + alvo.getTamanho() + " KB");
                     }
                     case "cd" -> {
@@ -53,12 +53,12 @@ public class Main {
                         } else if (atual.buscar(destino) instanceof Pasta pasta) {
                             atual = pasta;
                         } else {
-                            System.out.println("Pasta não encontrada.");
+                            System.out.println("Pasta nao encontrada.");
                         }
                     }
                     case "ajuda" -> ajuda();
                     case "sair" -> { return; }
-                    default -> System.out.println("Comando inválido. Digite 'ajuda'.");
+                    default -> System.out.println("Comando invalido. Digite 'ajuda'.");
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("Erro: " + e.getMessage());
@@ -82,7 +82,7 @@ public class Main {
                   touch <nome> <kb>     cria arquivo com tamanho em KB
                   rm <nome>             remove arquivo ou pasta
                   ls                    lista a pasta atual
-                  tree                  mostra a árvore a partir da pasta atual
+                  tree                  mostra a arvore a partir da pasta atual
                   size [nome]           tamanho total (de um item ou da pasta atual)
                   cd <nome> | cd ..     navega entre pastas
                   ajuda | sair""");
